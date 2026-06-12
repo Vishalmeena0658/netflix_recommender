@@ -1,37 +1,41 @@
-# Netflix_Recommender
 # 🎬 Netflix Prize Recommender System (Cult Open Projects 2026)
 
-A production-grade, highly optimized personalized recommendation pipeline built from scratch using low-level NumPy and SciPy primitives on the Netflix Prize dataset. This engine bypasses high-level black-box wrappers (like `scikit-surprise`) to implement collaborative, content-based, and weighted hybrid recommendation architectures optimized for continuous rating estimation and ranked retrieval metrics.
-
-## 🚀 Key Architectural Deliverables
-* **Data Ingestion Pipeline:** High-speed streaming file parser constructing memory-efficient Compressed Sparse Row (CSR) matrices.
-* **Exploratory Data Analysis (EDA):** Automated calculation of interaction matrix sparsity profiles, rating distributions, and asset consumption trends.
-* **Modular Multi-Paradigm Models:** Implementation of low-rank Matrix Factorization via Singular Value Decomposition (Pure-SVD) and TF-IDF text matching.
-* **Hybrid Ensemble Blending Module:** Explicit feature blending model mitigating user cold-start bounds via semantic feature fallbacks.
-* **Ranked Positioning Multi-Metrics:** Custom calculation layers evaluating predictive accuracy (RMSE, MAE) alongside information retrieval metrics (MAP@10, NDCG@10).
-* **Interactive Deployment Layer:** Local web interface displaying recommendation lists with human-readable explanation vectors.
+A production-ready, highly optimized personalized recommendation pipeline built entirely from scratch using low-level NumPy and SciPy primitives on the Netflix Prize dataset. This architecture bypasses high-level black-box wrappers (such as `scikit-surprise`) to implement Collaborative Filtering, Content-Based Similarity Matching, and a Hybrid Ensemble Blending engine optimized for continuous rating estimation and ranked discovery performance.
 
 ---
 
-## 📂 Project Structure
+## 📌 Project Submission Quick Links
+* 📄 **[Technical_Report.pdf](./Technical_Report.pdf)** — Full 10-page analytical report mapping EDA, algorithmic selection, mathematical definitions, and evaluation metrics.
+* 📊 **[Project_Presentation.pdf](./Project_Presentation.pdf)** — High-level 8-slide summary deck designed for the judging panel pitch.
+* 📓 **[netflix_recommender.ipynb](./netflix_recommender.ipynb)** — Live interactive execution log displaying step-by-step pipeline verifications and visualization charts.
+
+---
+
+## 📂 Core Codebase & Pipeline Directory
+
+Reviewers can find the core operational scripts mapped across the following structural architecture:
+
 ```text
 netflix_recommender/
 │
 ├── configs/
-│   └── config.py          # Hyperparameter scopes and environment path anchors
+│   └── config.py               # Hyperparameter scopes, random seeds, and environment paths
 │
-├── data/raw/              # Directory for raw data assets (omitted from version control)
+├── src/                        # Core Modular Implementation Code
+│   ├── data/                   # DATA PROCESSING & EDA PIPELINES
+│   │   ├── loader.py           # Ingestion pipeline: Text parser converting raw files to CSR Matrices
+│   │   └── eda.py              # EDA pipeline: Computes matrix sparsity, trends, and distributions
+│   │
+│   ├── models/                 # MODEL TRAINING & EVALUATION ARCHITECTURES
+│   │   └── recommenders.py     # Contains PureSVD, Content-Based, and Hybrid generation modules
+│   │
+│   └── evaluation/             # METRICS COMPUTING LAYER
+│       └── metrics.py          # Custom formulas for RMSE, MAE, MAP@10, and NDCG@10
 │
-├── src/                   # Core Modular Codebase Source
-│   ├── data/              # Ingestion, parsing, and matrix transformation modules
-│   │   ├── loader.py
-│   │   └── eda.py
-│   ├── evaluation/        # Validation loss and precision ranking metrics
-│   │   └── metrics.py
-│   └── models/            # Core recommendation generation engines
-│       └── recommenders.py
-│
-├── app.py                 # Streamlit web dashboard deployment script
-├── requirements.txt       # Hard python environmental dependencies
-├── train_and_evaluate.py  # Main pipeline execution orchestrator
-└── README.md              # Repository specification documentation
+├── Technical_Report.pdf        # Main 10-page analytical report (PDF of Report)
+├── Project_Presentation.pdf    # Main 8-slide pitch deck (PDF of PPT / Slides)
+├── netflix_recommender.ipynb   # Interactive analysis notebook (Result showing)
+├── app.py                      # Streamlit interactive web dashboard server code
+├── requirements.txt            # Hard python environmental library dependencies
+├── train_and_evaluate.py       # Terminal pipeline master orchestrator execution script
+└── README.md                   # Complete system documentation and path guideation documentation
