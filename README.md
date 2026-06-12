@@ -1,3 +1,4 @@
+# Netflix_Recommender
 # 🎬 Netflix Prize Recommender System (Cult Open Projects 2026)
 
 A production-grade, highly optimized personalized recommendation pipeline built from scratch using low-level NumPy and SciPy primitives on the Netflix Prize dataset. This engine bypasses high-level black-box wrappers (like `scikit-surprise`) to implement collaborative, content-based, and weighted hybrid recommendation architectures optimized for continuous rating estimation and ranked retrieval metrics.
