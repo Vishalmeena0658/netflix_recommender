@@ -1,0 +1,9 @@
+# Ignore the large raw dataset folder entirely
+data/
+
+# Ignore Python caching and temporary environment configurations
+__pycache__/
+*.pyc
+.pytest_cache/
+.streamlit/
+
